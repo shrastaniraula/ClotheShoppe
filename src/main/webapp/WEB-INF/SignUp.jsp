@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <h1 style="text-align: center;">Welcome to <span style="color: lightskyblue;">Register</span> Page</h1>
+   
 
     <div class="container" style="display: flex; align-items: center; position: fixed;">
         <div class="img">
@@ -47,6 +47,11 @@
 
                 <label for="confirm_password">Confirm Password:</label>
                 <input type="password" id="confirm_password" name="passwordbc" required>
+                
+                <div>
+                <label>Image</label>
+				<input type="file" name="image">
+                </div>
 
                 <div style="text-align: center;">
                     <input type="submit" value="Register">

@@ -3,12 +3,12 @@ import java.sql.*;
 
 public class RegistrationDAO {
 	
-	public String register(String username, String email, String gender, String Pass, String cpass) {
+	public String register(String username, String email, String gender, String Pass, String cpass, String image) {
 	    try {
 	        String url = "jdbc:mysql://localhost:3306/clotheeshopee";
 	        String userName = "root";
 	        String password = "";
-	        String query = "insert into registration values(?,?,?,?,?)";
+	        String query = "insert into registration values(?,?,?,?,?,?)";
 
 	        Class.forName("com.mysql.jdbc.Driver");
 	        Connection con = DriverManager.getConnection(url, userName, password);
@@ -18,6 +18,7 @@ public class RegistrationDAO {
 	        pt.setString(3, gender);
 	        pt.setString(4, Pass);
 	        pt.setString(5, cpass);
+	        pt.setString(6, image);
 	        int rows = pt.executeUpdate();
 	        if (rows >= 1) {
 	            return "Successfully Added";
@@ -39,7 +40,6 @@ public class RegistrationDAO {
 	}
 	
 
-	
 	
 
 }

@@ -29,16 +29,17 @@ public class Login extends HttpServlet {
     	String Gender = request.getParameter("gender");
     	String Password = request.getParameter("passwordb");
     	String CPassword = request.getParameter("passwordbc");
+    	String Image = request.getParameter("image");
     	
     	
-    	System.out.println(Username+Email+Gender+Password+CPassword);
+    	System.out.println(Username+Email+Gender+Password+CPassword+Image);
     	
     	response.setContentType("text/html");
 
     	
     	
     	RegistrationDAO sado = new RegistrationDAO();
-		String message = sado.register(Username,Email,Gender,Password,CPassword);
+		String message = sado.register(Username,Email,Gender,Password,CPassword,Image);
 		PrintWriter outt = response.getWriter();
 		outt.println("<h1>"+message+"</h1>");
     	
