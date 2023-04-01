@@ -9,8 +9,13 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  
+ 
+  
+  
    <context-param>
    			<param-name>imagesPath</param-name>
    			<param-value>E:/Advance Programming/ClotheShoppe/src/main/webapp/WEB-INF/images\\</param-value>
    </context-param>
+   
 </web-app>

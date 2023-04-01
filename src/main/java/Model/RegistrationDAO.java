@@ -1,4 +1,4 @@
-package MOdel;
+package Model;
 import java.sql.*;
 
 public class RegistrationDAO {
@@ -31,12 +31,38 @@ public class RegistrationDAO {
 	    } catch (SQLException e) {
 	        System.out.println(e.getMessage());
 	        return e.getMessage();
-	    }
+	    }		
+	}
 	
+	public boolean login(String Id, String pass) {
+		
+		try {
+	        String url = "jdbc:mysql://localhost:3306/clotheeshopee";
+	        String userName = "root";
+	        String password = "";
+	        String query = "select * from registration where UserName = '"+ Id +"' and Password = '" + pass+ "'";
 
-	
-	
-			
+	        Class.forName("com.mysql.jdbc.Driver");
+	        Connection con = DriverManager.getConnection(url, userName, password);
+	        PreparedStatement pt = con.prepareStatement(query);
+	        ResultSet table = pt.executeQuery();
+	        
+	        if (table.next()) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		catch(SQLException e){} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		return false;
+		
+		
+		
 	}
 	
 
