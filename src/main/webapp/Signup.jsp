@@ -19,7 +19,7 @@
             <img src="images/photo.png" alt="">
         </div>
         <div class="form" style="height: fit-content; width:500px;">
-            <form action="registration" method="post">
+            <form action="Server1" method="get">
                 <h1 style="text-align: center;"><span style="color: lightseagreen;">SignUp Form</span></h1>
 
                 <label for="username">Username:</label>
