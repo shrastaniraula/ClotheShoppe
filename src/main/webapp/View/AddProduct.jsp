@@ -23,15 +23,20 @@
 
     <div class="mb-4 row justify-content-center">
         <div class="col-lg-6">
-            <form action="/add-patient" method="post">
+            <form action="../AddProduct" method="post">
                
+               <div class="form-group my-3">
+                    <label for="">Product Id</label>
+                    <input type="text" name="productId" id="" class="form-control" required>
+                </div>
+                
                 <div class="form-group my-3">
                     <label for="">Product Name</label>
-                    <input type="text" name="name" id="" class="form-control" required>
+                    <input type="text" name="productName" id="" class="form-control" required>
                 </div>
                 <div class="form-group my-3">
                     <label for="">Product Price</label>
-                    <input type="number" name="price" id="" class="form-control" required>
+                    <input type="text" name="price" id="" class="form-control" required>
                 </div>
                
                 <div class="form-group my-3">
@@ -48,7 +53,7 @@
                 </div>
                 <div class="form-group my-3">
                     <label for="">Stock</label>
-                    <input type="number" name="stock" id="" class="form-control" required>
+                    <input type="text" name="stock" id="" class="form-control" required>
                 </div>
                 <div class="form-group my-3">
                     <label for="">Choose Image</label>
