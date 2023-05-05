@@ -24,6 +24,8 @@
 
                 <label for="username">Username:</label>
                 <input type="text" id="name" name="username" required>
+                
+            	//error message displayed here!!
 
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
