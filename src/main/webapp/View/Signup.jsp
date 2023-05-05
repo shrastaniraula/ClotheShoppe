@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="E.css">
+    <!-- <link rel="stylesheet" href="E.css">-->
     <title>Sign In</title>
 </head>
 
@@ -20,27 +20,19 @@
         </div>
         <div class="form" style="height: fit-content; width:500px;">
             <form action="Server1" method="get">
-                <h1 style="text-align: center;"><span style="color: lightseagreen;">SignUp Form</span></h1>
+                <h1>SignUp Form</h1>
 
                 <label for="username">Username:</label>
                 <input type="text" id="name" name="username" required>
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="emailb" required><br>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
 
-                <div style="display: flex;">
-
-                    <label>Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-
-                    <input type="radio" name="gender" value="Male" id="maleRadio" />
-
-                    <label for="maleRadio">Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-
-                    <input type="radio" name="gender" value="Female" id="femaleRadio" />
-
-                    <label for="femaleRadio">Female</label>
-
-                </div><br>
+                <label for="phone">Phone no:</label>
+                <input type="text" id="phone" name="phone" required>
 
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="passwordb" required>
@@ -57,6 +49,7 @@
                     <input type="submit" value="Register">
                 </div>
             </form>
+            <p>Already Registered? <a href="Login.jsp">Login</a></p>
         </div>
 
     </div>
