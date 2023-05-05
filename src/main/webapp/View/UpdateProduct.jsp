@@ -19,7 +19,7 @@
 
     <div class="mb-4 row justify-content-center">
         <div class="col-lg-6">
-            <form action="/edit-patient/{{$product->id}}" method="post">
+            <form action="/edit-patient/{{$p->id}}" method="post">
              
                 <div class="form-group my-3">
                     <label for="">Product Name</label>
@@ -41,7 +41,7 @@
                 </div>
                 <div class="form-group my-3">
                     <label for="">Description</label>
-                    <input type="text" value="{{$$product->description}" name="description" id="" class="form-control" required>
+                    <input type="text" value="{{$$product->description}}" name="description" id="" class="form-control" required>
                 </div>
                 <div class="form-group my-3">
                     <label for="">Stock</label>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="form-group my-3">
                     <label for="">Change Image</label>
-                    <input type="file" value="{{$patient->image}" name="image" id="" class="form-control" required>
+                    <input type="file" value="{{$product->image}}" name="image" id="" class="form-control" required>
                 </div>
                 <input type="submit" value="Submit" class="btn btn-primary form-control">
             </form>
