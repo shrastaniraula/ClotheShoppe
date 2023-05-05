@@ -19,7 +19,7 @@
 
     <div class="mb-4 row justify-content-center">
         <div class="col-lg-6">
-            <form action="/edit-patient/{{$patient->id}}" method="post">
+            <form action="/edit-patient/{{$product->id}}" method="post">
              
                 <div class="form-group my-3">
                     <label for="">Product Name</label>
