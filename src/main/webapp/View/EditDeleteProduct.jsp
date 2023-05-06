@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,14 +14,14 @@
     <div class="d-flex justify-content-between">
         <h1 class="mt-4">Product</h1>
         <div class="mt-4">
-            <a href="/add-patient" class="btn btn-primary">Add Product</a>
+            <a href="AddProduct.jsp" class="btn btn-primary">Add Product</a>
         </div>
     </div>
     
     <div class="card mb-4 mt-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Patient List
+            Product List
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
@@ -37,19 +38,21 @@
                     </tr>
                 
              
-                <tbody>
-                   <!-- @foreach($patient as $p) --> 
+                
+                   <c:forEach var="pd" items="${pdList}">
                     <tr>
-                        <td>{{$p->name}}</td>
-                        <td>{{$p->gender}}</td>
-                        <td>{{$p->phone_number}}</td>
-                        <td>{{$p->age}}</td>
-                        <td>{{$p->service}}</td>
-                        <td>{{$p->total}}</td>
-
-                        <td>{{$p->arrival}}</td>
-                        <td><a href="/edit-patient/{{$p->id}}" class="btn btn-primary btn-sm">Edit</a><a href="/delete-patient/{{$p->id}}" class="btn btn-danger btn-sm ms-2">Delete</a></td>
-                    </tr>
+                        
+				<td><c:out value="${pd.productId}"/></td>
+				<td>${pd.productName}</td>
+				<td>${pd.price}</td>
+				<td>${pd.category}</td>
+				<td>${pd.brand}</td>
+				<td>${pd.description}</td>
+				<td>${pd.stock}</td>
+				<td><img src="images/${pd.productImagePath}" height="100px" width="100px"></td>
+				<td><a href="${pageContext.request.contextPath}/editProduct?id=${pd.productId}">Edit</a><a href="${pageContext.request.contextPath}/deleteProduct?id=${pd.productId}">Delete</a></td>
+			</tr>	
+		</c:forEach>
                    
                    
                 </tbody>

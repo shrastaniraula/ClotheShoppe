@@ -1,16 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
-
-
-
+     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Ecommerce Store</title>
-  <link rel="stylesheet" href="Home.css">
+<meta charset="ISO-8859-1">
+<title>Home</title>
 </head>
 <body>
   <header>
@@ -25,46 +20,18 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <img src="${pageContext.request.contextPath}/Images/homepage.png" alt="placeholder image">
-      <h2>Welcome to My Ecommerce Store</h2>
-      <p>Discover our wide selection of products</p>
-      <button>Shop Now</button>
-    </section>
-
-    <section class="featured-products">
-      <h2>Featured Products</h2>
-      <div class="product-grid">
-        <div class="product">
-          <img src="product1.jpg" alt="Product 1">
-          <h3>Product 1</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="product">
-          <img src="product2.jpg" alt="Product 2">
-          <h3>Product 2</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="product">
-          <img src="product3.jpg" alt="Product 3">
-          <h3>Product 3</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <button>Add to Cart</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-us">
-      <h2>About Us</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut dapibus nunc. Nullam ut velit vel augue euismod vulputate. Sed venenatis, mauris ac hendrerit efficitur, nisl elit varius elit, et consequat quam sapien in libero. In ac nulla est. Duis euismod, arcu vel eleifend convallis, enim turpis rutrum velit, in fermentum sapien lorem euismod enim. Praesent vitae ipsum at nulla cursus congue nec id leo.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2023 My Ecommerce Store</p>
-  </footer>
+<div class="products-lists">
+		<c:forEach var="pd" items="${pdList}">
+		<div class= "product-card">
+		
+		<img src="images/${pd.productImagePath}" height="200px" width="200px" ><br>
+        <h3 class="product-name">${pd.productName}</h3>
+        <h2 class = "price" >${pd.price}</h2>
+        <a href="${pageContext.request.contextPath}/singleProduct?id=${pd.productId}">Know More</a>
+        
+        
+		</div>
+        </c:forEach>
+    </div>
 </body>
 </html>
