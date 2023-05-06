@@ -2,7 +2,6 @@ package Controller;
 
 import java.io.IOException;
 
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -14,13 +13,17 @@ import javax.servlet.http.Part;
 import Model.ProductDAO;
 import Model.Products;
 
-//import model.AESEncryption;
-
-@SuppressWarnings("serial")
-@WebServlet("/AddProduct")
+@WebServlet("/updateProduct")
 @MultipartConfig
-public class AddProduct extends HttpServlet {
-	public void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+public class UpdateProduct extends HttpServlet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String productId = request.getParameter("productId");
 		String productName = request.getParameter("productName");
 		String price = request.getParameter("price");
@@ -34,34 +37,16 @@ public class AddProduct extends HttpServlet {
 		Products product = new Products(productId, productName, price, category, brand, description, stock, productImagePath);
 		ProductDAO pDao = new ProductDAO();
 		
-		String message = pDao.addProduct(product);
-		System.out.println("okay");
-		System.out.println(message);
-		System.out.println("okay");
+		String message = pDao.updateProduct(product);
+		Part image = request.getPart("image");
 		
-		if(message.equals("Successfully Added")) {
+		if(message.equals("Successfully Registered") && image!=null && image.getInputStream().available() > 0) {
 			String imagePath = getServletContext().getInitParameter("productImagePath");
-			System.out.print(imagePath);
 			String fullPath = imagePath+productImagePath;
-			System.out.print(fullPath);
-			
-//			response.sendRedirect("/ClotheShop/View/EditDeleteProduct.jsp");
-			
-			
-			Part image = request.getPart("image");
-			System.out.print(image);
 			image.write(fullPath);
-			
 			response.sendRedirect("viewProduct");
-			
 		}
-		
-		
-		
-	}
-	
-	
 
-	
-	
+	}
+
 }

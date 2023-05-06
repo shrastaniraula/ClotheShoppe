@@ -23,7 +23,7 @@
 
     <div class="mb-4 row justify-content-center">
         <div class="col-lg-6">
-            <form action="../AddProduct" method="post">
+            <form action="../AddProduct" method="post" enctype="multipart/form-data">
                
                <div class="form-group my-3">
                     <label for="">Product Id</label>
