@@ -49,7 +49,7 @@
 				<td>${pd.brand}</td>
 				<td>${pd.description}</td>
 				<td>${pd.stock}</td>
-				<td><img src="images/${st.productImagePath}" height="100px" width="100px"></td>
+				<td><img src="images/${pd.productImagePath}" height="100px" width="100px"></td>
 				<td><a href="${pageContext.request.contextPath}/editProduct?id=${pd.productId}">Edit</a><a href="${pageContext.request.contextPath}/deleteProduct?id=${pd.productId}">Delete</a></td>
 			</tr>	
 		</c:forEach>
