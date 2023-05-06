@@ -1,47 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="E.css">
-    <title>Log In</title>
+	<title>Login Form</title>
+	<link rel="stylesheet" type="text/css" href="E.css">
 </head>
-
 <body>
-   
+	<div class="container">
+		<div class="image-container">
+			<img src="${pageContext.request.contextPath}/Images/Clothee Shoppe.png" alt="placeholder image">
+		</div>
+		<div class="form-container">
+			<h2>Login</h2>
+			<form>
+				<label for="username">Username</label>
+				<input type="text" id="username" name="username" required>
 
-    <div class="container" style="display: flex; align-items: center;">
-        <div class="img">
-            <img src="images/photo.png" alt="">
-        </div>
-        <div class="form" style="height: fit-content; width:500px;">
-            <form action="Server2" method="post">
-                <h1>LOGIN FORM</h1>
-
-                <label for="username">Username:</label>
-                <input type="text" id="name" name="username" required>
-                
-            	
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-
-
-                <div style="text-align: center;">
-                    <input type="submit" value="Register">
-                </div>
-            </form>
-             <p>Not Logged in? <a href="Signup.jsp">SignUp</a></p>
-        </div>
-
-    </div>
-
-
-
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password" required>
+				
+				<div>
+					<input type="submit" value="Login">
+					<p>Not Registered? <a href="Signup.jsp">Sign Up</a></p>
+				</div>
+			</form>
+		</div>
+	</div>
 </body>
-
 </html>
