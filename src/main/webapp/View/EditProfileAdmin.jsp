@@ -1,23 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
     
-    
-    
+      <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
     
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="View/Style.css">
-<title>Edit Product</title>
+<title>Profile</title>
 </head>
 <body>
 
 <div class="container-fluid px-4">
     <div class="d-flex justify-content-between">
-        <h1 class="mt-4">Product</h1>
-        
+        <h1 class="mt-4">User</h1>
         <div class="mt-4">
             <a href="View/Dashboard.jsp" class="btn btn-primary">Back</a>
         </div>
@@ -26,39 +23,37 @@
     <div class="card mb-4 mt-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Product List
+            User List
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
                 <thead>
                     <tr>
-                    <th>Product Id</th>
+                    <th>Phone Number</th>
                         <th>Name</th>
-                        <th>Price</th>
-                        <th>Category</th>
-                        <th>Brand</th>
-                        <th>Description</th>
+                        <th>Password</th>
+                        <th>Address</th>
+                        <th>Email</th>
                         
-                        <th>Stock</th>
                         <th>Image</th>
+                        
+                       
                         
                         <th>Action</th>
                     </tr>
                 </thead>
              <tbody>
                 
-                   <c:forEach var="pd" items="${pdList}">
+                   <c:forEach var="userl" items="${userList}">
                     <tr>
                         
-				<td><c:out value="${pd.productId}"/></td>
-				<td>${pd.productName}</td>
-				<td>${pd.price}</td>
-				<td>${pd.category}</td>
-				<td>${pd.brand}</td>
-				<td>${pd.description}</td>
-				<td>${pd.stock}</td>
-				<td><img src="Images/${pd.productImagePath}" height="100px" width="100px"></td>
-				<td><a href="${pageContext.request.contextPath}/editProduct?id=${pd.productId}" class="btn btn-primary btn-sm">Edit</a><a href="${pageContext.request.contextPath}/deleteProduct?id=${pd.productId}" class="btn btn-danger btn-sm ms-2">Delete</a></td>
+				<td><c:out value="${userl.phone_number}"/></td>
+				<td>${userl.username}</td>
+				<td>${userl.password}</td>
+				<td>${userl.address}</td>
+				<td>${userl.email}</td>
+				<td><img src="Images/${userl.image}" height="100px" width="100px"></td>
+				<td><a href="${pageContext.request.contextPath}/editUser?phNo=${userl.phone_number}" class="btn btn-primary btn-sm">Edit</a><a href="${pageContext.request.contextPath}/deleteUser?phNo=${userl.phone_number}" class="btn btn-danger btn-sm ms-2">Delete</a></td>
 			</tr>	
 		</c:forEach>
                    
@@ -67,11 +62,8 @@
             </table>
         </div>
     </div>
-    
-    <div class="mt-4">
-            <a href="View/AddProduct.jsp" class="btn btn-primary">Add Product</a>
-        </div>
 </div>
+
 
 
 </body>

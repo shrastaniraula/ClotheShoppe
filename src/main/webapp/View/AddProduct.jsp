@@ -16,7 +16,7 @@
     <div class="d-flex justify-content-between">
         <h1 class="mt-4">Add Product</h1>
         <div class="mt-4">
-            <a href="/dashboard" class="btn btn-primary">Back</a>
+            <a href="Dashboard.jsp" class="btn btn-primary">Back</a>
         </div>
     </div>
     <hr>

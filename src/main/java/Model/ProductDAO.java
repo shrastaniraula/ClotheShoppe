@@ -90,6 +90,51 @@ public class ProductDAO {
 					
 	}
 	
+	
+	public ArrayList<Products> fetchProductListbySearch(String searching){
+		ArrayList<Products> productList = new ArrayList<>();
+		Connection con = null;
+		try {
+			con = getConnection();
+			String query = "select * from product where product_name like ?";
+			PreparedStatement st = con.prepareStatement(query);
+			st.setString(1, "%" + searching + "%");
+			ResultSet table = st.executeQuery();
+			while(table.next()) {
+				String productId = table.getString(1);
+				String productName = table.getString(2);
+				String description = table.getString(3);
+				String price = table.getString(4);
+				String brand = table.getString(5);
+				String category = table.getString(6);
+				String stock = table.getString(7);
+				String productImagePath = table.getString(8);
+				
+				Products product = new Products(productId, productName, price, category, brand, description, stock, productImagePath); 
+				productList.add(product);
+				
+			}
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+		}
+		finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		System.out.print(productList);
+		return productList;
+		
+					
+	}
+	
 	public Products getProductById(String productId) {
 		Connection con = null;
 		Products product = null;

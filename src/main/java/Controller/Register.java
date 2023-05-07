@@ -10,41 +10,57 @@ import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import Model.RegistrationDAO;
+import Model.User;
+import Model.AESEncryption;
 
-@WebServlet(name = "Server1", urlPatterns = {"/Server1"})
+
+@SuppressWarnings("serial")
+@WebServlet("/hello")
+@MultipartConfig
 public class Register extends HttpServlet {
-	private static final long serialVersionUID = 102831973239L;
        
-    /**
-     * @throws IOException 
-     * @see HttpServlet#HttpServlet()
-     */
     public void service(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException { 
     	
-    	String Username = request.getParameter("username");
-    	String Email = request.getParameter("emailb");
-    	String Gender = request.getParameter("gender");
-    	String Password = request.getParameter("passwordb");
-    	String CPassword = request.getParameter("passwordbc");
-    	String Image = request.getParameter("image");
     	
-    	
-    	System.out.println(Username+Email+Gender+Password+CPassword+Image);
-    	
-    	response.setContentType("text/html");
-
-    	
-    	
-    	RegistrationDAO sado = new RegistrationDAO();
-		String message = sado.register(Username,Email,Gender,Password,CPassword,Image);
-		PrintWriter outt = response.getWriter();
-		outt.println("<h1>"+message+"</h1>");
+		String username = request.getParameter("username");
+		String email = request.getParameter("email");
+		String address = request.getParameter("address");
+		String phone_number = request.getParameter("phone_number");
+		String password = request.getParameter("password");
+		
+		
+		System.out.println("hi");
+		System.out.println(password);
+		System.out.println("hi");
+		
+		String encryptedPassword = Model.AESEncryption.encrypt(password);
+		String relativePath = "users/"+phone_number+".png";
+		
+		System.out.println("hello");
+		System.out.print(encryptedPassword);
+		System.out.println("hello");
+		User rt = new User(username, email, address,phone_number, encryptedPassword,relativePath);
+		System.out.print(rt);
+		
+		RegistrationDAO rDao = new RegistrationDAO();
+		String message =  rDao.registerUser(rt);
+		
+		if(message.equals("Successfully Added")) {
+			Part image = request.getPart("image");
+			String imagePath = getServletContext().getInitParameter("productImagePath");
+			String fullPath = imagePath+relativePath;
+			image.write(fullPath);
+			
+			response.sendRedirect("View/Login.jsp");
+		}
     	
     }
 

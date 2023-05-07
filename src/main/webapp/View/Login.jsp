@@ -18,12 +18,12 @@
         <div class="img">
             <img src="images/photo.png" alt="">
         </div>
-        <div class="form" style="height: fit-content; width:500px;">
-            <form action="Server2" method="post">
+        <div>
+            <form action="../Server2" method="post">
                 <h1>LOGIN FORM</h1>
 
-                <label for="username">Username:</label>
-                <input type="text" id="name" name="username" required>
+                <label for="username">Phone number:</label>
+                <input type="text" id="name" name="phone_number" required>
                 
             	
 
@@ -31,8 +31,8 @@
                 <input type="password" id="password" name="password" required>
 
 
-                <div style="text-align: center;">
-                    <input type="submit" value="Register">
+                <div>
+                    <input type="submit" value="Login">
                 </div>
             </form>
              <p>Not Logged in? <a href="Signup.jsp">SignUp</a></p>

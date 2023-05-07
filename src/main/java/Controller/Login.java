@@ -2,6 +2,7 @@ package Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,49 +10,40 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Model.RegistrationDAO;
+import Model.User;
 
-@WebServlet(name = "Server2", urlPatterns = {"/Server2"})
+
+
+@WebServlet("/Server2")
 public class Login extends HttpServlet {
-	private static final long serialVersionUID = 102831973239L;
-       
-    /**
-     * @throws IOException 
-     * @see HttpServlet#HttpServlet()
-     */
-    public void service(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException { 
-    	
-    	String Username = request.getParameter("username");
-    	String Password = request.getParameter("password");
-    	
-    	
-    	
-    	System.out.println(Username+Password);
-    	
-    	response.setContentType("text/html");
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-    	
-    	
-    	RegistrationDAO sado = new RegistrationDAO();
-		boolean message = sado.login(Username,Password);
+	public void service(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
+		String phone_number = request.getParameter("phone_number");
+		String password = request.getParameter("password");
 		
-		if(message == true) {
-			RequestDispatcher rd = request.getRequestDispatcher("Profile.jsp");
-			rd.forward(request, response);
+		
+		RegistrationDAO rDao = new RegistrationDAO();
+		boolean isValid =  rDao.checkLogin(phone_number,password);
+		HttpSession session = request.getSession();
+		if(isValid == true) {
+			session.setAttribute("loggedInusername",phone_number);
+			response.sendRedirect("View/Index.jsp");
+			
 		}
 		else {
-			PrintWriter out = response.getWriter();
-			out.println("<br><br><br>");
-			out.println("<p>TRY AGAIN</p>");
-			
-			RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
-			rd.include(request, response);
+			session.setAttribute("loginError","Invalid user_id or password");
+			response.sendRedirect("View/Login.jsp");		
 		}
 		
-    	
-    }
-
+	}
+      
+   
 
 }
-

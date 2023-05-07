@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<a>View User</a>
+<a href= "../viewUser">View User</a>
 <a href = "../viewProduct" >View Products</a>
 <a>View Orders</a>
 

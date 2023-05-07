@@ -9,11 +9,19 @@
 </head>
 <body>
 
+<div>
+<form action= "SearchProduct" method="post">
+<input type="text" name="searchObject" placeholder="Search Products...">
+<input type="submit" value="Login">
+</form>
+
+</div>
+
 <div class="products-lists">
 		<c:forEach var="pd" items="${pdList}">
 		<div class= "product-card">
 		
-		<img src="images/${pd.productImagePath}" height="200px" width="200px" ><br>
+		<img src="Images/${pd.productImagePath}" height="200px" width="200px" ><br>
         <h3 class="product-name">${pd.productName}</h3>
         <h2 class = "price" >${pd.price}</h2>
         <a href="${pageContext.request.contextPath}/singleProduct?id=${pd.productId}">Know More</a>
@@ -21,6 +29,8 @@
         
 		</div>
         </c:forEach>
+        
+       <a href="EditProfileUser">Edit Profile</a>
     </div>
 </body>
 </html>

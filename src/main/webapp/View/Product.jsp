@@ -9,7 +9,7 @@
 <body>
 <div>
 
-<img src="images/${product.productImagePath}" height="200px" width="200px">
+<img src="Images/${product.productImagePath}" height="200px" width="200px">
 <h1>Product Name: ${product.productName}</h1>
 <h1>Product Price: ${product.price}</h1>
 <p>Product Description: ${product.description}</p>
@@ -18,7 +18,8 @@
 <p>Total in stock: ${product.stock}</p>
 
 <a>Rating</a>
-<a>Add to Cart</a>
+
+<a href= "${pageContext.request.contextPath}/AddCart?id=${product.productId}">Add to Cart</a>
 <a href="homeEntry">Go Back</a>
 
 

@@ -19,27 +19,27 @@
             <img src="images/photo.png" alt="">
         </div>
         <div class="form" style="height: fit-content; width:500px;">
-            <form action="Server1" method="get">
+            <form action="../hello" method="post" enctype="multipart/form-data">
                 <h1>SignUp Form</h1>
-
-                <label for="username">Username:</label>
-                <input type="text" id="name" name="username" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
                 
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address" required>
+                
+                <label for="username">User Name</label>
+                <input type="text" name="username" required>
+                
+                <label for="email">email:</label>
+                <input type="email" name="email" required>
+                
+                
+                <label for="address">address:</label>
+                <input type="text"  name="address" required>
 
-                <label for="phone">Phone no:</label>
-                <input type="text" id="phone" name="phone" required>
-
+                <label for="phone">phone_number</label>
+                <input type="text"  name="phone_number" required>
+                
+                
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="passwordb" required>
+                <input type="password" name="password" required>
 
-                <label for="confirm_password">Confirm Password:</label>
-                <input type="password" id="confirm_password" name="passwordbc" required>
-                
                 <div>
                 <label>Image</label>
 				<input type="file" name="image">

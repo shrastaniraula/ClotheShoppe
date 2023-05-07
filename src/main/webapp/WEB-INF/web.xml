@@ -13,7 +13,7 @@
  
    <context-param>
    			<param-name>productImagePath</param-name>
-   			<param-value>D:/GITTRRYYYY/ClotheShoppe/src/main/webapp/images/</param-value>
+   			<param-value>D:/GITTRRYYYY/ClotheShoppe/src/main/webapp/Images/</param-value>
    </context-param>
-   
+
 </web-app>
