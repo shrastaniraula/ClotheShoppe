@@ -5,9 +5,18 @@ public class Cart {
 	private String productId;
 	private String customerPhone;
 	private String imagePath;
-	private String price;
-	private String orderNo;
+	private int price;
+	private int orderNo;
 	private String productName;
+	
+	public Cart(String productId, String productName, String customerPhone, String imagePath, int price, int orderNo) {
+		this.productId = productId;
+		this.productName = productName;
+		this.customerPhone = customerPhone;
+		this.imagePath = imagePath;
+		this.price = price;
+		this.orderNo = orderNo;
+	}
 	
 	
 	public String getProductId() {
@@ -28,16 +37,16 @@ public class Cart {
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
 	}
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
-	public String getOrderNo() {
+	public int getOrderNo() {
 		return orderNo;
 	}
-	public void setOrderNo(String orderNo) {
+	public void setOrderNo(int orderNo) {
 		this.orderNo = orderNo;
 	}
 	public String getProductName() {

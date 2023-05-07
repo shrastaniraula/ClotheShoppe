@@ -31,6 +31,7 @@
         </c:forEach>
         
        <a href="EditProfileUser">Edit Profile</a>
+       <a href="AddCart" >Cart</a>
     </div>
 </body>
 </html>
