@@ -1,0 +1,123 @@
+@charset "ISO-8859-1";
+
+.container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+ justify-content: center;
+ margin: 20px;
+ max-width: 960px;
+ padding: 20px; 
+ background-color: #f7f7f7;
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+ font-family: sans-serif;
+}
+                   
+.product-image {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 400px; /* set the desired height */
+}
+
+.product-image img {
+  max-width: 100%;
+ max-height: 100%;
+}
+                   
+.product-details {
+  flex: 1;
+  padding: 20px;
+}
+h1 {
+font-size: 32px;
+margin: 0;
+margin-bottom: 10px;
+}
+                   
+h2 {
+font-size: 24px;
+margin: 0;
+margin-bottom: 10px;
+}
+  
+a{
+text-decoration: none;
+}    
+             
+h3 {
+font-size: 18px;
+margin: 0;
+margin-bottom: 10px;
+}
+                   
+p {
+font-size: 14px;
+margin: 0;
+margin-bottom: 10px;
+}
+
+                   
+.price {
+font-size: 24px;
+font-weight: bold;
+margin-bottom: 10px;
+color: red
+}  
+                   
+.stock {
+font-size: 14px;
+color: green;
+margin-bottom: 10px;
+}
+                   
+.rating {
+margin-bottom: 20px;
+}
+                   
+.rating input[type=radio] {
+display: none;
+}
+                   
+.rating label {
+display: inline-block;
+cursor: pointer;
+color: grey;
+}
+
+                   
+.rating label:before {
+content: "\2605";
+font-size: 30px;
+}
+                   
+.rating input[type=radio]:checked ~ label {
+color: gold;
+}
+
+.rating {
+margin-bottom: 20px;
+}
+
+button {
+display: block;
+margin-top: 20px;
+margin-left: auto;
+margin-right: auto;
+background-color: #1271d6;
+border: none;
+color: white;
+padding: 10px 20px;
+text-align: center;
+text-decoration: none;
+font-size: 16px;
+cursor: pointer;
+border-radius: 5px;
+}
+
+button:hover {
+ opacity: 0.8;
+color: chartreuse;
+}
+
+

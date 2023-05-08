@@ -74,6 +74,7 @@ public class CartDAO {
 			PreparedStatement pdst = con.prepareStatement(finalquery);
 			
 			pdst.setLong(1, orderNo);
+			pdst.setString(1, phoneno);
 			
 			ResultSet table2 = pdst.executeQuery();
 			while(table2.next()) {

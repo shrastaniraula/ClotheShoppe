@@ -52,7 +52,7 @@
                
                 <div class="form-group my-3">
                     <label for="">Change Image</label>
-                    <input type="file" value="images/${userl.image}" name="image" onchange="onImageChange()" id="imageChooser" class="form-control" required>
+                    <input type="file" value="Images/${userl.image}" name="image" onchange="onImageChange()" id="imageChooser" class="form-control" required>
                     <img id="image" src="Images/${userl.image}" height="100px" width="100px">
                 </div>
                 <input type="submit" value="Submit" class="btn btn-primary form-control">

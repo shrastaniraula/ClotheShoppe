@@ -4,28 +4,48 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Product</title>
+
+<link rel="stylesheet" type="text/css" href="View/product.css">
 </head>
 <body>
-<div>
 
-<img src="Images/${product.productImagePath}" height="200px" width="200px">
-<h1>Product Name: ${product.productName}</h1>
-<h1>Product Price: ${product.price}</h1>
-<p>Product Description: ${product.description}</p>
-<p>Product Brand: ${product.brand}</p>
-<p>Product Category: ${product.category}</p>
-<p>Total in stock: ${product.stock}</p>
+<a href="homeEntry"><button>Go Back</button></a>
+<div class="container">
+    <div class="product-image">
+        <img src="Images/${product.productImagePath}" alt="Product Image">
+    </div>
+    <div class="product-details">
 
-<a>Rating</a>
-
-<a href= "${pageContext.request.contextPath}/AddCart?id=${product.productId}">Add to Cart</a>
-<a href="homeEntry">Go Back</a>
-
+        <h1>${product.productName}</h1>
+        <p>Category:  ${product.category}</p>
+        <h3>${product.brand}</h3><br>
+        <p class="price">Price: ${product.price}</p>
+        <p class="stock">Stock Available: ${product.stock}</p>
+   
+    
+    <div class="rating">
+            <input type="radio" name="rating" id="rating-5" value="5">
+            <label for="rating-5"></label>
+            <input type="radio" name="rating" id="rating-4" value="4">
+            <label for="rating-4"></label>
+            <input type="radio" name="rating" id="rating-3" value="3">
+            <label for="rating-3"></label>
+            <input type="radio" name="rating" id="rating-2" value="2">
+            <label for="rating-2"></label>
+            <input type="radio" name="rating" id="rating-1" value="1">
+            <label for="rating-1"></label>
+       
+           <a href= "${pageContext.request.contextPath}/AddCart?id=${product.productId}"> <button>Add to Cart</button></a>
+           
+    </div>
+</div>
 
 
 
 
 </div>
+<br>
+
 </body>
 </html>

@@ -7,19 +7,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="E.css"> -->
+    <link rel="stylesheet" href="E.css">
     <title>Log In</title>
 </head>
 
 <body>
    
-
-    <div class="container" style="display: flex; align-items: center;">
-        <div class="img">
-            <img src="images/photo.png" alt="">
+     <% if(session.getAttribute("loginError") != null){ %>
+		
+			<h2><%= session.getAttribute("loginError") %></h2>
+			<%session.removeAttribute("loginError");%>	
+			
+		<%} %>
+    <div class="container" style="display: flex; align-items: center; margin-top: 100px">
+        <div class="image-container">
+            <img src="images/clothe.png" alt="" height="500 px" width="600px">
         </div>
         <div>
-            <form action="../Server2" method="post">
+            <form action="../Server2" method="post" style="margin-left: 100px; width: 500px">
                 <h1>LOGIN FORM</h1>
 
                 <label for="username">Phone number:</label>
@@ -34,8 +39,9 @@
                 <div>
                     <input type="submit" value="Login">
                 </div>
+                <p>Not Logged in? <a href="Signup.jsp">SignUp</a></p>
             </form>
-             <p>Not Logged in? <a href="Signup.jsp">SignUp</a></p>
+             
         </div>
 
     </div>

@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="E.css">-->
+    <link rel="stylesheet" href="E.css">
     <title>Sign In</title>
 </head>
 
@@ -15,12 +15,12 @@
    
 
     <div class="container" style="display: flex; align-items: center; position: fixed;">
-        <div class="img">
-            <img src="images/photo.png" alt="">
+        <div class="image-container">
+            <img src="images/clothe.png" alt="" height="500 px" width="600px">
         </div>
-        <div class="form" style="height: fit-content; width:500px;">
+        <div class="form" style="margin-left: 100px; width: 500px">
             <form action="../hello" method="post" enctype="multipart/form-data">
-                <h1>SignUp Form</h1>
+               
                 
                 
                 <label for="username">User Name</label>

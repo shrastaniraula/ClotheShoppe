@@ -5,17 +5,29 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home</title>
+<link rel="stylesheet" href="View/home.css">
+<title>Clothe Shoppee</title>
 </head>
 <body>
 
+<div class="search-container">
 <div>
+
 <form action= "SearchProduct" method="post">
 <input type="text" name="searchObject" placeholder="Search Products...">
-<input type="submit" value="Login">
+<input type="submit" value="SEARCH">
 </form>
-
 </div>
+
+
+
+
+<div class="edit">
+    <a href="EditProfileUser">Edit Profile</a>
+    <a href="AddCart" >Cart</a>
+    <a href="HistoryUser">View History</a></div>
+</div>
+
 
 <div class="products-lists">
 		<c:forEach var="pd" items="${pdList}">
@@ -30,9 +42,7 @@
 		</div>
         </c:forEach>
         
-       <a href="EditProfileUser">Edit Profile</a>
-       <a href="AddCart" >Cart</a>
-       <a href="HistoryUser">View History</a>
+
     </div>
 </body>
 </html>
