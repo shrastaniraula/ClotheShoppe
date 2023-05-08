@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 
 
-@WebFilter(urlPatterns={"/AddCart", "/EditProfileUser"})
+@WebFilter(urlPatterns={"/AddCart", "/EditProfileUser", "/HistoryUser"})
 public class LoginFilter implements Filter {
 
 	@Override

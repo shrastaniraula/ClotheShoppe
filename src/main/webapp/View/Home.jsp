@@ -32,6 +32,7 @@
         
        <a href="EditProfileUser">Edit Profile</a>
        <a href="AddCart" >Cart</a>
+       <a href="HistoryUser">View History</a>
     </div>
 </body>
 </html>

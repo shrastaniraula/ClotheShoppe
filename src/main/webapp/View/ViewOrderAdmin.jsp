@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
      <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="View/Style.css">
-<title>User History</title>
+<title>Order List</title>
 </head>
 <body>
 <div class="container-fluid px-4">
@@ -27,7 +28,9 @@
             <table id="datatablesSimple">
                 <thead>
                     <tr>
+                    <th>Product Id</th>
                         <th>Product Name</th>
+                        <th>Customer Phone</th>
                         <th>Price</th>
                         <th>Order Id</th>
                         <th>Image</th> 
@@ -38,7 +41,9 @@
                    <c:forEach var="hist" items="${histList}">
                     <tr>
                         
-				<td><c:out value="${hist.productName}"/></td>
+				<td><c:out value="${hist.productId}"/></td>
+				<td>${hist.productName}</td>
+				<td>${hist.customerPhone}</td>
 				<td>${hist.price}</td>
 				<td>${hist.orderNo}</td>
 				<td><img src="Images/${hist.imagePath}" height="100px" width="100px"></td>

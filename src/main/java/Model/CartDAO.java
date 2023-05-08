@@ -220,6 +220,99 @@ public class CartDAO {
 		
 	}
 	
+	public ArrayList<Cart> fetchHistoryList(String phone){
+		ArrayList<Cart> cartList = new ArrayList<>();
+		Connection con = null;
+		try {
+			con = getConnection();
+			String query = "select * from history where customer_phone = ?";
+			PreparedStatement st = con.prepareStatement(query);
+			st.setString(1, phone);
+			ResultSet table = st.executeQuery();
+			while(table.next()) {
+				String productId = table.getString(1);
+				String productName = table.getString(2);
+				String customerPhone = table.getString(3);
+				String image = table.getString(4);
+				String price = table.getString(5);
+				String orderId = table.getString(6);
+				
+				int num = Integer.parseInt(orderId);
+				int totalPrice = Integer.parseInt(price);
+				
+				Cart cart = new Cart(productId, productName, customerPhone, image, totalPrice, num); 
+				cartList.add(cart);		
+			}
+			
+			
+			
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+		}
+		finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		System.out.print(cartList);
+		return cartList;
+		
+					
+	}
+	
+	public ArrayList<Cart> fetchOrderList(){
+		ArrayList<Cart> cartList = new ArrayList<>();
+		Connection con = null;
+		try {
+			con = getConnection();
+			String query = "select * from history";
+			PreparedStatement st = con.prepareStatement(query);
+			ResultSet table = st.executeQuery();
+			while(table.next()) {
+				String productId = table.getString(1);
+				String productName = table.getString(2);
+				String customerPhone = table.getString(3);
+				String image = table.getString(4);
+				String price = table.getString(5);
+				String orderId = table.getString(6);
+				
+				int num = Integer.parseInt(orderId);
+				int totalPrice = Integer.parseInt(price);
+				
+				Cart cart = new Cart(productId, productName, customerPhone, image, totalPrice, num); 
+				cartList.add(cart);		
+			}
+			
+			
+			
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+		}
+		finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		System.out.print(cartList);
+		return cartList;
+		
+					
+	}
+	
 	
 	
 }
