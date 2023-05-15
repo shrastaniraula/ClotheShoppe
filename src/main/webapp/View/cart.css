@@ -1,0 +1,157 @@
+/* Remove default margin and padding from body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  color: #000040;
+  padding: 10px;
+}
+
+/* Style the search bar */
+.search {
+  display: flex;
+   flex: 1;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+  position: relative;
+  left:450px;
+}
+
+.search input[type="text"] {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  left:450px;
+  position:absloute;
+}
+
+.search button[type="submit"] {
+ 		   border: none;
+		   position: absolute;
+		  border-radius: 4px;
+		  padding: 10px;
+		  background-color: #000000;
+		  color: white;
+		  left: 350px;
+		  font-size: 16px;
+		  margin-left: 10px;
+		  cursor: pointer;
+		  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		  top: 0px;
+}
+
+/* Style the back button */
+.back-btn {
+  display: flex;
+  align-items: center;
+}
+
+.back-btn button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style the main section */
+main {
+  padding: 10px;
+}
+
+/* Style the cart items section */
+.cart-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  position:absloute;
+  top:20px;
+  height:50%;
+}
+
+.cart-item {
+  width: calc(50% - 10px);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position:absloute;
+  width:100%;
+  height:50%;
+}
+
+.cart-item .product-image img {
+  max-width: 100%;
+  height:20%;
+  
+}
+
+.cart-item .product-info-options {
+  margin-top: 20px;
+}
+
+.cart-item .product-info-options h3 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.cart-item .product-info-options p {
+  margin: 10px 0 0 0;
+  position:relative;
+}
+
+.cart-item .product-info-options p:first-of-type {
+  font-weight: bold;
+}
+
+.cart-item .product-info-options p:last-of-type {
+  font-weight: bold;
+  color: #e60000;
+}
+.cart-item .product-info-options .p{
+	position:relative;
+	left:550px;
+	top:-200px;
+}
+
+.cart-item .product-info-options .pr{
+	position:relative;
+	left:750px;
+	top:-230px;
+}
+
+
+/* Style the checkout button */
+.checkout {
+  display: flex;
+  justify-content: centre;
+  margin-top: 20px;
+  left:600px;
+  position:relative;
+  
+}
+
+#checkout-btn {
+  background-color: #e60000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+}
+

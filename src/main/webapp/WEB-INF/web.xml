@@ -13,7 +13,22 @@
  
    <context-param>
    			<param-name>productImagePath</param-name>
-   			<param-value>D:/GITTRRYYYY/ClotheShoppe/src/main/webapp/images/</param-value>
+   			<param-value>D:/GITTRRYYYY/ClotheShoppe/src/main/webapp/Images/</param-value>
    </context-param>
    
+   <error-page>
+   <error-code>400</error-code>
+   <location>//errorhandling400</location>
+   </error-page>
+   
+   <error-page>
+   <error-code>404</error-code>
+   <location>//errorhandling</location>
+   </error-page>
+   
+   <error-page>
+   <error-code>500</error-code>
+   <location>//errorhandling500</location>
+   </error-page>
+
 </web-app>
