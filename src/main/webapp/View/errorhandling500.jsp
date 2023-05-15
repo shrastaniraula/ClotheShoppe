@@ -68,7 +68,7 @@ body{
 <body>
 <div>
     <h1>500</h1>
-    <h4>Page Not Found</h4><br>
+    <h4>Connection Error</h4><br>
     <p>Something went wrong.</p> <br>
     <a href="../homeEntry">Go To Home</a>
 </div>

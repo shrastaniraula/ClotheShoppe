@@ -27,7 +27,7 @@ public class HomeEntry extends HttpServlet{
 		ProductDAO pdao = new ProductDAO();
 		ArrayList<Products> productList =  pdao.fetchProductList();
 		request.setAttribute("pdList",productList);
-		System.out.println(productList);
+//		System.out.println(productList);
 		RequestDispatcher rd = request.getRequestDispatcher("View/Home.jsp");
 		rd.forward(request, response);
 	}

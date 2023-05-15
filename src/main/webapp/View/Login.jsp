@@ -23,7 +23,7 @@
         <div class="image-container">
             <img src="images/clothe.png" alt="" height="500 px" width="600px">
         </div>
-        <div>
+        <div class= "form-container">
             <form action="../Server2" method="post" style="margin-left: 100px; width: 500px">
                 <h1>LOGIN FORM</h1>
 

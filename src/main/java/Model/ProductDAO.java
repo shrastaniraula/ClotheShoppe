@@ -36,7 +36,7 @@ public class ProductDAO {
 			if(rows >= 1) {
 				message = "Successfully Added";
 			}
-			con.close();	
+//			con.close();	
 		} catch (SQLException | ClassNotFoundException e) {
 			System.out.println(e.getMessage());
 			message = e.getMessage();
@@ -75,16 +75,15 @@ public class ProductDAO {
 			e.printStackTrace();
 			
 		}
-		finally {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
-		System.out.print(productList);
+//		finally {
+//			try {
+//				con.close();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			
+//		}
 		return productList;
 		
 					
@@ -120,16 +119,16 @@ public class ProductDAO {
 			e.printStackTrace();
 			
 		}
-		finally {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
-		System.out.print(productList);
+//		finally {
+//			try {
+//				con.close();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			
+//		}
+//		System.out.print(productList);
 		return productList;
 		
 					
@@ -162,15 +161,15 @@ public class ProductDAO {
 			e.printStackTrace();
 			
 		}
-		finally {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
+//		finally {
+//			try {
+//				con.close();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			
+//		}
 		return product;
 		
 	}
@@ -198,7 +197,7 @@ public class ProductDAO {
 			if(rows >= 1) {
 				message = "Successfully Registered";
 			}
-			con.close();	
+//			con.close();	
 		} catch (SQLException | ClassNotFoundException e) {
 			System.out.println(e.getMessage());
 			message = e.getMessage();
@@ -221,7 +220,7 @@ public class ProductDAO {
 			
 				message = "Successfully Deleted";
 			
-			con.close();	
+//			con.close();	
 		} catch (SQLException | ClassNotFoundException e) {
 			System.out.println(e.getMessage());
 			message = e.getMessage();

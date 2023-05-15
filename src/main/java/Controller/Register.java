@@ -2,13 +2,6 @@ package Controller;
 
 import java.io.IOException;
 
-
-
-import java.io.PrintWriter;
-
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -19,8 +12,6 @@ import javax.servlet.http.Part;
 
 import Model.RegistrationDAO;
 import Model.User;
-import Model.AESEncryption;
-
 
 @SuppressWarnings("serial")
 @WebServlet("/hello")
@@ -35,11 +26,6 @@ public class Register extends HttpServlet {
 		String address = request.getParameter("address");
 		String phone_number = request.getParameter("phone_number");
 		String password = request.getParameter("password");
-		
-		
-		System.out.println("hi");
-		System.out.println(password);
-		System.out.println("hi");
 		
 		String encryptedPassword = Model.AESEncryption.encrypt(password);
 		String relativePath = "users/"+phone_number+".png";

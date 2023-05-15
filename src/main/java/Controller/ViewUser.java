@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 import Model.RegistrationDAO;
 import Model.User;
 
@@ -28,7 +27,6 @@ public class ViewUser extends HttpServlet{
 		RegistrationDAO rdao = new RegistrationDAO();
 		ArrayList<User> userList =  rdao.fetchUserRecord();
 		request.setAttribute("userList",userList);
-		System.out.println(userList);
 		RequestDispatcher rd = request.getRequestDispatcher("View/EditProfileAdmin.jsp");
 		rd.forward(request, response);
 	}

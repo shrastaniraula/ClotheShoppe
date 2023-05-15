@@ -36,7 +36,7 @@ public class EditProfileUser extends HttpServlet{
 			RegistrationDAO rdao = new RegistrationDAO();
 			User userList =  rdao.getUserRecordByPhNo(phone);
 			request.setAttribute("userl",userList);
-			System.out.println(userList);
+//			System.out.println(userList);
 			RequestDispatcher rd = request.getRequestDispatcher("View/EditProfileUser.jsp");
 			rd.forward(request, response);
 		}

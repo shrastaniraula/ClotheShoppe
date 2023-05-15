@@ -8,11 +8,13 @@ import Model.AESEncryption;
 public class RegistrationDAO {
 	
 	public Connection getConnection() throws ClassNotFoundException, SQLException {
-		String url = "jdbc:mysql://localhost:3306/clotheshoppe";
-		String username = "root";
-		String password = "";
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection con = DriverManager.getConnection(url,username,password);
+//		String url = "jdbc:mysql://localhost:3306/clotheshoppe";
+//		String username = "root";
+//		String password = "";
+//		Class.forName("com.mysql.jdbc.Driver");
+//		Connection con = DriverManager.getConnection(url,username,password);
+		ProductDAO dao = new ProductDAO();
+		Connection con = dao.getConnection();
 		return con;
 	}
 	
@@ -34,7 +36,7 @@ public class RegistrationDAO {
 	        if (rows >= 1) {
 	            return "Successfully Added";
 	        } 
-	        con.close();
+//	        con.close();
 	    } 
 	    catch (SQLException | ClassNotFoundException e) {
 			System.out.println(e.getMessage());
@@ -72,15 +74,15 @@ public class RegistrationDAO {
 			e.printStackTrace();
 			
 		}
-		finally {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
+//		finally {
+//			try {
+//				con.close();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			
+//		}
 		System.out.println(userList);
 		return userList;	
 	}
@@ -95,7 +97,6 @@ public class RegistrationDAO {
 			st.setString(1, phone_number);
 			st.setString(2, EncryptedPassword);
 			
-			
 			ResultSet table = st.executeQuery();
 			
 			if(table.next()) {
@@ -108,8 +109,8 @@ public class RegistrationDAO {
 			e.printStackTrace();
 		}
 		return isValid;
-		
 	}
+	
 	public User getUserRecordByPhNo(String user_id) {
 		Connection con = null;
 		User user = null;
@@ -139,15 +140,15 @@ public class RegistrationDAO {
 			e.printStackTrace();
 			
 		}
-		finally {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
+//		finally {
+//			try {
+//				con.close();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			
+//		}
 		return user;
 		
 	}
@@ -172,7 +173,7 @@ public class RegistrationDAO {
 			if(rows >= 1) {
 				message = "Successfully Registered";
 			}
-			con.close();	
+//			con.close();	
 		} catch (SQLException | ClassNotFoundException e) {
 			System.out.println(e.getMessage());
 			message = e.getMessage();
@@ -195,7 +196,7 @@ public class RegistrationDAO {
 			
 				message = "Successfully Deleted";
 			
-			con.close();	
+//			con.close();	
 		} catch (SQLException | ClassNotFoundException e) {
 			System.out.println(e.getMessage());
 			message = e.getMessage();

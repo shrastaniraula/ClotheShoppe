@@ -18,7 +18,7 @@
         <div class="image-container">
             <img src="images/clothe.png" alt="" height="500 px" width="600px">
         </div>
-        <div class="form" style="margin-left: 100px; width: 500px">
+        <div class="form-container" style="margin-left: 100px; width: 500px">
             <form action="../hello" method="post" enctype="multipart/form-data">
                
                 

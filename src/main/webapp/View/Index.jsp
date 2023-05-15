@@ -22,6 +22,6 @@
   </style>
 </head>
 <body>
-<a href="../homeEntry"><button>Discover</button></a>
+<a href="${pageContext.request.contextPath}/homeEntry"><button>Discover</button></a>
 </body>
 </html>

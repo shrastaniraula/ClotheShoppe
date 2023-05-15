@@ -7,17 +7,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 
 
 public class CartDAO {
 	
 	
 	public Connection getConnection() throws ClassNotFoundException, SQLException {
-		String url = "jdbc:mysql://localhost:3306/clotheshoppe";
-		String username = "root";
-		String password = "";
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection con = DriverManager.getConnection(url,username,password);
+//		String url = "jdbc:mysql://localhost:3306/clotheshoppe";
+//		String username = "root";
+//		String password = "";
+//		Class.forName("com.mysql.jdbc.Driver");
+//		Connection con = DriverManager.getConnection(url,username,password);
+		ProductDAO dao = new ProductDAO();
+		Connection con = dao.getConnection();
 		return con;
 	}
 
@@ -70,11 +74,11 @@ public class CartDAO {
 				}
 				
 			}
-			String finalquery = "select * from cart where order_id = ?";
+			String finalquery = "select * from cart where order_id = ? and customer_phone = ?";
 			PreparedStatement pdst = con.prepareStatement(finalquery);
 			
 			pdst.setLong(1, orderNo);
-			pdst.setString(1, phoneno);
+			pdst.setString(2, phoneno);
 			
 			ResultSet table2 = pdst.executeQuery();
 			while(table2.next()) {
@@ -101,15 +105,15 @@ public class CartDAO {
 			e.printStackTrace();
 			
 		}
-		finally {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
+//		finally {
+//			try {
+//				con.close();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			
+//		}
 		System.out.print(cartList);
 		System.out.print(finalCartList);
 		return finalCartList;
@@ -118,7 +122,7 @@ public class CartDAO {
 	}
 	
 	public String fetchTotalPrice(){
-		
+//		HttpSession session = request.getSession()
 		Connection con = null;
 		String totalPrice = "";
 		
@@ -131,6 +135,7 @@ public class CartDAO {
 			PreparedStatement st = con.prepareStatement(query);
 			
 			st.setLong(1, orderNo);
+			
 			ResultSet table = st.executeQuery();
 			while(table.next()) {
 				 totalPrice = table.getString(1);
@@ -145,16 +150,16 @@ public class CartDAO {
 			e.printStackTrace();
 			
 		}
-		finally {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
-		
+//		finally {
+//			try {
+//				con.close();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			
+//		}
+//		
 		return totalPrice;
 		
 					
@@ -187,6 +192,9 @@ public class CartDAO {
 			int num = Integer.parseInt(orderNoo);
 			int totalPrice = Integer.parseInt(pricee);
 			
+			
+			
+			
 			String secondquery = "insert into history values(?,?,?,?,?,?)";
 			PreparedStatement pst = con.prepareStatement(secondquery);
 			pst.setString(1,productIdd);
@@ -202,20 +210,28 @@ public class CartDAO {
 //				ocount.increment();
 			}
 					
-		}} catch (ClassNotFoundException | SQLException e) {
+		}
+		
+		String dlt="Delete from cart where order_id='1'";
+		PreparedStatement pst = con.prepareStatement(dlt);
+		int rows=pst.executeUpdate();
+		System.out.println("THis is no. of rows: ");
+		System.out.println(rows);
+
+		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			
 		}
-		finally {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
+//		finally {
+//			try {
+//				con.close();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			
+//		}
 		return message;
 		
 		
@@ -253,15 +269,15 @@ public class CartDAO {
 			e.printStackTrace();
 			
 		}
-		finally {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
+//		finally {
+//			try {
+//				con.close();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			
+//		}
 		System.out.print(cartList);
 		return cartList;
 		
@@ -299,15 +315,15 @@ public class CartDAO {
 			e.printStackTrace();
 			
 		}
-		finally {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
+//		finally {
+//			try {
+//				con.close();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			
+//		}
 		System.out.print(cartList);
 		return cartList;
 		

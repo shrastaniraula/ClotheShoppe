@@ -14,7 +14,6 @@ import javax.servlet.http.HttpSession;
 import Model.Cart;
 import Model.CartDAO;
 
-
 @WebServlet("/AddCart")
 public class AddCart extends HttpServlet{
 
@@ -30,8 +29,6 @@ public class AddCart extends HttpServlet{
 		
 		HttpSession session = ((HttpServletRequest)request).getSession();
 		String customerPhone = (String) session.getAttribute("loggedInusername");
-		
-		
 		ArrayList<Cart> finalCartList = cdao.getCartById(id, customerPhone);
 		request.setAttribute("cart",finalCartList);
 		RequestDispatcher rd = request.getRequestDispatcher("View/AddToCart.jsp");

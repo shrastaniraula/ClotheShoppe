@@ -72,8 +72,8 @@
         <div class="child-class-price">
             <p>${ct.price}</p>
         </div>
-        
-       
+
+
     </div>
 </c:forEach>
      
@@ -81,8 +81,10 @@
      <%
     // create an instance of the Cartdao class
     CartDAO cartDao = new CartDAO();
+     
     
     // call the fetchPrice() method and store the result in a variable
+    
     String price = cartDao.fetchTotalPrice();
     
     // display the price on the page
